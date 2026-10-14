@@ -1,0 +1,269 @@
+/* Open Hand — accessible Obsidian theme (generous targets)
+ * Original CSS. MIT licensed. No network assets. Supports light + dark.
+ * Emphasis: enlarged hit areas and spacing, big focus ring, roomy typography.
+ */
+
+body {
+  --hand-radius: 10px;
+  --hand-radius-s: 7px;
+  --hand-hairline: 1px;
+  --hand-focus-ring: 4px;
+  --hand-target: 44px;
+  --hand-tap: 32px;
+  --hand-row: 36px;
+  --hand-check: 32px;
+  --hand-heading-font: ui-rounded, "SF Pro Rounded", "Hiragino Maru Gothic ProN", Quicksand, "Varela Round", ui-sans-serif, system-ui, sans-serif;
+  --font-text-theme: ui-rounded, "SF Pro Rounded", "Hiragino Maru Gothic ProN", Quicksand, "Varela Round", ui-sans-serif, system-ui, sans-serif;
+  --font-interface-theme: ui-rounded, "SF Pro Rounded", "Hiragino Maru Gothic ProN", Quicksand, "Varela Round", ui-sans-serif, system-ui, sans-serif;
+  --font-monospace-theme: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --font-text-size: 19px;
+  --line-height-normal: 1.8;
+  --line-height-tight: 1.5;
+  --p-spacing: 1.4em;
+  /* Generous scale: the largest, most open heading system of the family. */
+  --h1-size: 2.375em;
+  --h2-size: 1.8125em;
+  --h3-size: 1.5em;
+  --h4-size: 1.25em;
+  --h5-size: 1.125em;
+  --h6-size: 1em;
+  --h1-weight: 700; --h2-weight: 700; --h3-weight: 700;
+  --h4-weight: 600; --h5-weight: 600; --h6-weight: 600;
+  --radius-s: var(--hand-radius-s);
+  --radius-m: var(--hand-radius);
+  --radius-l: 16px;
+  --link-decoration: underline;
+  --link-decoration-hover: underline;
+  --link-decoration-thickness: 2px;
+  --clickable-icon-size: var(--hand-target);
+}
+
+.theme-light {
+  --hand-bg: #ffffff;
+  --hand-surface: #f4f6f9;
+  --hand-elevated: #e9edf3;
+  --hand-line: #c3cbd7;
+  --hand-text: #1e2430;
+  --hand-muted: #49515f;
+  --hand-faint: #6b7382;
+  --hand-link: #175fc0;
+  --hand-link-hover: #0f4692;
+  --hand-focus: #175fc0;
+  --hand-accent: #175fc0;
+  --hand-on-accent: #ffffff;
+
+  --background-primary: var(--hand-bg);
+  --background-primary-alt: var(--hand-surface);
+  --background-secondary: var(--hand-surface);
+  --background-secondary-alt: var(--hand-elevated);
+  --background-modifier-border: var(--hand-line);
+  --background-modifier-border-hover: #9aa6b6;
+  --background-modifier-border-focus: var(--hand-focus);
+  --background-modifier-hover: #e4e9f0;
+  --background-modifier-form-field: #ffffff;
+  --text-normal: var(--hand-text);
+  --text-muted: var(--hand-muted);
+  --text-faint: var(--hand-faint);
+  --text-accent: var(--hand-accent);
+  --text-accent-hover: var(--hand-link-hover);
+  --text-on-accent: var(--hand-on-accent);
+  --text-selection: #cfe0fb;
+  --text-highlight-bg: #ffe08a;
+  --caret-color: var(--hand-focus);
+  --link-color: var(--hand-link);
+  --link-color-hover: var(--hand-link-hover);
+  --link-external-color: var(--hand-link);
+  --interactive-normal: #eef1f6;
+  --interactive-hover: #e0e6ef;
+  --interactive-accent: var(--hand-accent);
+  --interactive-accent-hover: #0f4692;
+  --h1-color: #141922;
+  --h2-color: #1a2029;
+  --h3-color: #1e2430;
+  --h4-color: #262d3a;
+  --h5-color: #3a4250;
+  --h6-color: #555e6d;
+  --table-border-color: var(--hand-line);
+  --table-header-border-color: #9aa6b6;
+  --table-header-color: #141922;
+  --table-text-color: var(--hand-text);
+  --table-background: var(--hand-bg);
+  --table-header-background: var(--hand-surface);
+  --checkbox-border-color: #5c6573;
+  --checkbox-marker-color: #ffffff;
+  --checkbox-color: var(--hand-accent);
+  --tab-text-color: #49515f;
+  --tab-text-color-active: #141922;
+  --tab-text-color-focused-active: #141922;
+  --tab-background-active: var(--hand-bg);
+  --tab-divider-color: var(--hand-line);
+  --tab-outline-color: var(--hand-line);
+}
+
+.theme-dark {
+  --hand-bg: #12151a;
+  --hand-surface: #1a1e25;
+  --hand-elevated: #232831;
+  --hand-line: #39414e;
+  --hand-text: #edf1f6;
+  --hand-muted: #aab4c2;
+  --hand-faint: #8792a1;
+  --hand-link: #85b4ff;
+  --hand-link-hover: #b3d0ff;
+  --hand-focus: #85b4ff;
+  --hand-accent: #85b4ff;
+  --hand-on-accent: #0e1218;
+
+  --background-primary: var(--hand-bg);
+  --background-primary-alt: var(--hand-surface);
+  --background-secondary: var(--hand-surface);
+  --background-secondary-alt: var(--hand-elevated);
+  --background-modifier-border: var(--hand-line);
+  --background-modifier-border-hover: #55617a;
+  --background-modifier-border-focus: var(--hand-focus);
+  --background-modifier-hover: #232a35;
+  --background-modifier-form-field: #1a1e25;
+  --text-normal: var(--hand-text);
+  --text-muted: var(--hand-muted);
+  --text-faint: var(--hand-faint);
+  --text-accent: var(--hand-accent);
+  --text-accent-hover: var(--hand-link-hover);
+  --text-on-accent: var(--hand-on-accent);
+  --text-selection: #2a3a56;
+  --text-highlight-bg: #5b4a12;
+  --caret-color: var(--hand-focus);
+  --link-color: var(--hand-link);
+  --link-color-hover: var(--hand-link-hover);
+  --link-external-color: var(--hand-link);
+  --interactive-normal: #232831;
+  --interactive-hover: #2c333d;
+  --interactive-accent: var(--hand-accent);
+  --interactive-accent-hover: #b3d0ff;
+  --h1-color: #f4f7fb;
+  --h2-color: #eef2f7;
+  --h3-color: #edf1f6;
+  --h4-color: #e0e6ee;
+  --h5-color: #cad3de;
+  --h6-color: #aab4c2;
+  --table-border-color: var(--hand-line);
+  --table-header-border-color: #55617a;
+  --table-header-color: #f4f7fb;
+  --table-text-color: var(--hand-text);
+  --table-background: var(--hand-bg);
+  --table-header-background: var(--hand-surface);
+  --checkbox-border-color: #9aa6b6;
+  --checkbox-marker-color: #0e1218;
+  --checkbox-color: var(--hand-accent);
+  --tab-text-color: #aab4c2;
+  --tab-text-color-active: #f4f7fb;
+  --tab-text-color-focused-active: #f4f7fb;
+  --tab-background-active: var(--hand-bg);
+  --tab-divider-color: var(--hand-line);
+  --tab-outline-color: var(--hand-line);
+}
+
+/* Typography — roomy: large rounded headings with generous vertical rhythm */
+.markdown-rendered h1, .markdown-preview-view h1, .HyperMD-header-1 {
+  font-family: var(--hand-heading-font);
+  font-size: 2.375em; font-weight: 700; line-height: 1.15; letter-spacing: -0.015em;
+  margin-top: 1.5em; margin-bottom: 0.5em;
+}
+.markdown-rendered h2, .markdown-preview-view h2, .HyperMD-header-2 {
+  font-family: var(--hand-heading-font);
+  font-size: 1.8125em; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em;
+  margin-top: 1.4em; margin-bottom: 0.45em;
+}
+.markdown-rendered h3, .markdown-preview-view h3, .HyperMD-header-3 {
+  font-family: var(--hand-heading-font);
+  font-size: 1.5em; font-weight: 700; margin-top: 1.3em;
+}
+.markdown-rendered h4, .markdown-preview-view h4, .HyperMD-header-4 {
+  font-size: 1.25em; font-weight: 600; margin-top: 1.25em;
+}
+.markdown-rendered h5, .markdown-preview-view h5, .HyperMD-header-5 { font-size: 1.125em; font-weight: 600; margin-top: 1.2em; }
+.markdown-rendered h6, .markdown-preview-view h6, .HyperMD-header-6 { font-size: 1em; font-weight: 600; color: var(--hand-muted); }
+.markdown-rendered p { max-width: 70ch; }
+
+/* Links */
+.markdown-rendered a, .cm-s-obsidian span.cm-link, .cm-s-obsidian span.cm-hmd-internal-link { text-decoration: underline; text-underline-offset: 4px; }
+.markdown-rendered a.external-link::after { content: " \2197"; }
+.markdown-rendered a.is-unresolved { text-decoration: underline dotted; opacity: 1; }
+
+/* Lists — larger gaps */
+.markdown-rendered ul, .markdown-rendered ol { padding-inline-start: 1.7em; }
+.markdown-rendered li { margin-block: 0.55em; }
+.markdown-rendered ul > li::marker { color: var(--hand-accent); }
+
+/* Tasks — 32px checkbox hit area, generous row height */
+.markdown-rendered input[type="checkbox"].task-list-item-checkbox, input.task-list-item-checkbox {
+  width: var(--hand-check); height: var(--hand-check); border: 2px solid var(--checkbox-border-color); border-radius: 8px; margin-inline-end: 0.6em; vertical-align: middle;
+}
+.markdown-rendered li.task-list-item { min-height: var(--hand-check); padding-block: 0.4em; line-height: var(--line-height-normal); }
+.markdown-rendered li.task-list-item.is-checked { color: var(--hand-muted); }
+
+/* Callouts — roomy padding */
+.callout { border: var(--hand-hairline) solid var(--hand-line); border-left-width: 6px; border-radius: var(--hand-radius); }
+.callout { padding: 1em 1.1em; }
+.callout .callout-title { font-weight: 700; }
+.callout .callout-content p:last-child { margin-bottom: 0; }
+
+/* Blockquote */
+.markdown-rendered blockquote { border-inline-start: 6px solid var(--hand-accent); background-color: var(--hand-surface); border-radius: var(--hand-radius-s); padding: 0.6em 1.1em; }
+
+/* Tables — roomy cells */
+.markdown-rendered table, .cm-table-widget table { border: var(--hand-hairline) solid var(--hand-line); border-collapse: collapse; }
+.markdown-rendered th, .markdown-rendered td { border: var(--hand-hairline) solid var(--hand-line); padding: 0.8em 1em; }
+
+/* Code */
+.markdown-rendered code, .cm-s-obsidian span.cm-inline-code { font-family: var(--font-monospace-theme); background-color: var(--hand-surface); border: var(--hand-hairline) solid var(--hand-line); border-radius: var(--hand-radius-s); padding: 0.12em 0.4em; }
+.markdown-rendered pre, .cm-s-obsidian .HyperMD-codeblock { background-color: var(--hand-surface); border: var(--hand-hairline) solid var(--hand-line); border-radius: var(--hand-radius); padding: 1em 1.15em; line-height: var(--line-height-normal); }
+.markdown-rendered pre code { border: 0; background: transparent; }
+
+/* Search */
+.search-input-container input, .document-search-container input { border: var(--hand-hairline) solid var(--hand-line); background-color: var(--background-modifier-form-field); border-radius: var(--hand-radius); min-height: var(--hand-target); padding-inline: 0.8em; font-size: var(--font-ui-medium); }
+.search-result-file-title { font-weight: 700; padding-block: 0.35em; }
+.search-result-file-match { border-bottom: var(--hand-hairline) solid var(--hand-line); padding-block: 0.35em; }
+.search-result-file-matched-text { background-color: var(--text-highlight-bg); color: var(--text-normal); }
+
+/* Settings — larger rows and controls */
+.modal, .modal-container .modal { border: var(--hand-hairline) solid var(--hand-line); border-radius: var(--hand-radius); }
+.setting-item { border-top: var(--hand-hairline) solid var(--hand-line); padding-block: 0.9em; }
+.setting-item-name { font-weight: 600; font-size: var(--font-ui-medium); }
+.setting-item-description { color: var(--text-muted); }
+.vertical-tab-nav-item { border-radius: var(--hand-radius-s); padding: 0.55em 0.7em; }
+.vertical-tab-nav-item.is-active { background-color: var(--background-modifier-hover); font-weight: 700; }
+button, .mod-cta { min-height: var(--hand-target); border-radius: var(--hand-radius-s); padding-inline: 1em; }
+
+/* Tabs — taller, easier to hit (>= 40px) */
+.workspace-tab-header { border: 0; border-radius: var(--hand-radius-s) var(--hand-radius-s) 0 0; padding-inline: 0.6em; min-height: 42px; }
+.workspace-tab-header-inner { padding-block: 0.55em; min-height: var(--hand-row); align-items: center; }
+.workspace-tab-header-inner-title { font-weight: 600; }
+.workspace-tab-header.is-active { background-color: var(--background-modifier-hover); }
+.workspace-tab-header.is-active .workspace-tab-header-inner-title { font-weight: 700; }
+
+/* Navigation — taller rows (>= 36px hit height) */
+.nav-file-title, .nav-folder-title { border-radius: var(--hand-radius-s); padding-block: 0.45em; min-height: var(--hand-row); align-items: center; }
+.nav-file-title.is-active, .nav-folder-title.is-active { background-color: var(--background-modifier-hover); font-weight: 700; }
+.tree-item-self { padding-block: 0.35em; min-height: var(--hand-row); align-items: center; }
+.tree-item-self.is-selected { background-color: var(--background-modifier-hover); }
+.clickable-icon { min-width: var(--hand-target); min-height: var(--hand-target); }
+
+/* Keyboard focus: large, obvious ring */
+:focus-visible { outline: var(--hand-focus-ring) solid var(--hand-focus); outline-offset: 3px; border-radius: var(--hand-radius-s); }
+.workspace-tab-header:focus-visible, .nav-file-title:focus-visible, .clickable-icon:focus-visible,
+button:focus-visible, input:focus-visible, select:focus-visible { outline: var(--hand-focus-ring) solid var(--hand-focus); outline-offset: 3px; }
+
+/* Narrow layout (<= 520px): keep tables/code legible without clipping */
+@media (max-width: 520px) {
+  .markdown-rendered h1 { font-size: 1.7em; }
+  .markdown-rendered h2 { font-size: 1.45em; }
+  .markdown-rendered table { display: block; overflow-x: auto; max-width: 100%; }
+  .markdown-rendered pre { overflow-x: auto; max-width: 100%; }
+  .markdown-rendered code { overflow-wrap: anywhere; }
+  .callout { padding-inline: 0.85em; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
+}
